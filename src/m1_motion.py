@@ -6,7 +6,7 @@ their colleagues, and Micah Fletcher.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # -----------------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   Follow along with the lecture to run this program:
 #    - Using SSH from your computer
 #   When you have successfully run this program, change this _TODO_ to DONE.
@@ -36,7 +36,7 @@ def run_test_spin(robot):
       :type robot:  rb.RoseBot
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this.
+    # DONE: 3. Implement this.
     # -------------------------------------------------------------------------
 
     spin(robot, 2, 50)
@@ -68,18 +68,31 @@ def run_test_go(robot):
       :type robot:  rb.RoseBot
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this.
+    # DONE: 3. Implement this.
     # -------------------------------------------------------------------------
+    #Test 1
+    go(robot, 3, 40, 60)
+    #Test 2
+    go(robot, 3, 20, 90)
+    #Test 3
+    go(robot, 3, -30, 30)
+
 
 
 
 def go(robot, seconds, left_wheel_speed, right_wheel_speed):
     """ :type robot: rb.RoseBot """
     # -------------------------------------------------------------------------
-    # TODO: 6.
+    # DONE: 6.
     #   Make the robot go, by using the pattern from SPIN function, except
     #   using the given speeds for the left and right wheels, respectively.
     # -------------------------------------------------------------------------
+
+    robot.drive_system.right_motor.turn_on(right_wheel_speed)
+    robot.drive_system.left_motor.turn_on(left_wheel_speed)
+    time.sleep(seconds)
+    robot.drive_system.left_motor.turn_off()
+    robot.drive_system.right_motor.turn_off()
 
 
 def challenge1(robot):
